@@ -134,6 +134,7 @@ def Upper_Half_Plane(grid, dim, value):
                     of size grid.pts_each_dim
     """
     data = np.zeros(grid.pts_each_dim)
+    print(grid.vs[1])
     for i in range(1, grid.dims + 1):
         if i == dim:
             data += -grid.vs[i] + value

@@ -20,7 +20,9 @@ g = Grid(
     np.array([-3.0, -1.0, -1.0, -math.pi]),
     np.array([3.0, 4.0, 5.0, math.pi]),
     4,
-    np.array([60, 60, 50, 50]),
+    np.array([40, 40, 30, 30]),
+    # np.array([60, 60, 50, 50]),
+    # np.array([30, 30, 20, 20]),
     [3],
 )
 
@@ -28,10 +30,12 @@ g = Grid(
 my_car = DubinsCar4D2()
 
 # Use the grid to initialize initial value function
-Initial_value_f = CylinderShape(g, [3, 4], np.array([0.0, 1.0, 0.0, 0.0]), 0.70)
+# Initial_value_f = CylinderShape(g, [3, 4], np.array([0.0, 1.0, 0.0, 0.0]), 0.70)
+Initial_value_f = np.minimum.reduce([CylinderShape(g, [3, 4], np.array([.0, 1.0, 0.0, 0.0]), 0.70),
+                             CylinderShape(g, [3, 4], np.array([-2.0, 2.7, 0.0, 0.0]), 0.70)])
 
 # Look-back lenght and time step
-lookback_length = 2.0
+lookback_length = 1.8
 t_step = 0.05
 
 small_number = 1e-5
