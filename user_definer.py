@@ -17,8 +17,8 @@ import math
 """
 
 g = Grid(
-    np.array([-5.0, -5.0, -1.0, -math.pi]),
-    np.array([5.0, 5.0, 5.0, math.pi]),
+    np.array([-3.0, -1.0, -1.0, -math.pi]),
+    np.array([3.0, 4.0, 5.0, math.pi]),
     4,
     np.array([60, 60, 50, 50]),
     [3],
@@ -28,7 +28,7 @@ g = Grid(
 my_car = DubinsCar4D2()
 
 # Use the grid to initialize initial value function
-Initial_value_f = CylinderShape(g, [3, 4], np.zeros(4), 1)
+Initial_value_f = CylinderShape(g, [3, 4], np.array([0.0, 1.0, 0.0, 0.0]), 0.70)
 
 # Look-back lenght and time step
 lookback_length = 2.0
@@ -42,9 +42,9 @@ print("")
 """
 Assign one of the following strings to `compMethod` to specify the characteristics of computation
 "none" -> compute Backward Reachable Set
-"minVwithV0" -> compute Backward Reachable Tube
-"maxVwithVInit" -> compute max V over time
-"minVwithVInit" compute min V over time
+"minVWithV0" -> compute Backward Reachable Tube
+"maxVWithVInit" -> compute max V over time
+"minVWithVInit" compute min V over time
 """
 compMethod = "minVWithV0"
 my_object = my_car

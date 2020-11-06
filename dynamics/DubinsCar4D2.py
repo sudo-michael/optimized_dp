@@ -131,7 +131,7 @@ class DubinsCar4D2:
 
     def dynamics(self, t, state, uOpt, dOpt):
         # wheelbase of Tamiya TT02
-        L = hcl.scalar(0.26, "L")
+        L = hcl.scalar(0.3, "L")
         x_dot = hcl.scalar(0, "x_dot")
         y_dot = hcl.scalar(0, "y_dot")
         v_dot = hcl.scalar(0, "v_dot")
