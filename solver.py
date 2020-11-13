@@ -118,7 +118,7 @@ def main():
     print("Finished solving\n")
 
     # V1 is the final value array, fill in anything to use it
-    np.save("cone_01_r07_-227_r07", V_1.asnumpy())
+    np.save(filename, V_1.asnumpy())
 
 
 

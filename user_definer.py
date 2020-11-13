@@ -17,12 +17,10 @@ import math
 """
 
 g = Grid(
-    np.array([-3.0, -1.0, -1.0, -math.pi]),
-    np.array([3.0, 4.0, 5.0, math.pi]),
+    np.array([-3.0, -1.0, 0.0, -math.pi]),
+    np.array([3.0, 4.0, 4.0, math.pi]),
     4,
-    np.array([40, 40, 30, 30]),
-    # np.array([60, 60, 50, 50]),
-    # np.array([30, 30, 20, 20]),
+    np.array([60, 60, 20, 36]),
     [3],
 )
 
@@ -30,12 +28,27 @@ g = Grid(
 my_car = DubinsCar4D2()
 
 # Use the grid to initialize initial value function
-# Initial_value_f = CylinderShape(g, [3, 4], np.array([0.0, 1.0, 0.0, 0.0]), 0.70)
-Initial_value_f = np.minimum.reduce([CylinderShape(g, [3, 4], np.array([.0, 1.0, 0.0, 0.0]), 0.70),
-                             CylinderShape(g, [3, 4], np.array([-2.0, 2.7, 0.0, 0.0]), 0.70)])
+'''
+Initial_value_f = CylinderShape(g, [3, 4], np.array([0.0, 1.0, 0.0, 0.0]), 0.80) 
+filename = "center"
+'''
 
+'''
+Initial_value_f = np.minimum.reduce([CylinderShape(g, [3, 4], np.array([0.0, 1.0, 0.0, 0.0]), 0.8),
+                             CylinderShape(g, [3, 4], np.array([0.00, 1.15, 0.0, 0.0]), 0.8),
+                             CylinderShape(g, [3, 4], np.array([0.0, 1.3, 0.0, 0.0]), 0.8),
+                             CylinderShape(g, [3, 4], np.array([0.0, 1.45, 0.0, 0.0]), 0.8),
+                             CylinderShape(g, [3, 4], np.array([0.0, 1.6, 0.0, 0.0]), 0.8)])
+filename = "line_01"
+'''
+
+Initial_value_f = np.minimum.reduce([CylinderShape(g, [3, 4], np.array([0.0, 0.0, 0.0, 0.0]), 0.70),
+                             CylinderShape(g, [3, 4], np.array([1.25, 2.0, 0.0, 0.0]), 0.70),
+                             CylinderShape(g, [3, 4], np.array([0.0, 1.0, 0.0, 0.0]), 0.70),
+                             CylinderShape(g, [3, 4], np.array([-1.9, 1.65, 0.0, 0.0]), 0.70)])
+filename = "apart"
 # Look-back lenght and time step
-lookback_length = 1.8
+lookback_length = 0.5
 t_step = 0.05
 
 small_number = 1e-5

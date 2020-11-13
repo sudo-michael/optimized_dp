@@ -22,8 +22,8 @@ class DubinsCar4D2:
     def __init__(
         self,
         x=[0, 0, 0, 0],
-        uMin=[-1.5, -math.pi / 12],
-        uMax=[1.5, math.pi / 12],
+        uMin=[-1.5, -math.pi / 18],
+        uMax=[1.5, math.pi / 18],
         dMin=[0.0, 0.0],
         dMax=[0.0, 0.0],
         uMode="max",
