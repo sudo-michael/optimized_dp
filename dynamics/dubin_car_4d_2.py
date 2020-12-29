@@ -1,5 +1,5 @@
 import heterocl as hcl
-import computeGraphs
+import compute_graphs
 import math
 
 """
