@@ -13,8 +13,8 @@ Notes: For 6 dimensions, recommended grid size is 20-30 each dimension on system
 * user_definer.py: specify grid numbers, dynamic systems intialization, initial value function ,computation method.
 * solver.py: Compute HJ PDE, the end result is V1 value function
 * dynamics/ : User's dynamical system specification
-* Shapes/ShapesFunctions.py : Add-in functions for calculating different intial value functions
-* computeGraphs/CustomGraphFunctions.py: Ready-to-user HeteroCL style utility functions
+* Shapes/shape_functions.py : Add-in functions for calculating different intial value functions
+* compute_graphs/custom_graph_functions.py: Ready-to-user HeteroCL style utility functions
 
 # Tips to specify your own problem and use the final result
 * Create a class file in folder dynamics/ to specify your system characteristics
