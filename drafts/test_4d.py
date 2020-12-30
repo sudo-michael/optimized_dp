@@ -2,9 +2,9 @@ import heterocl as hcl
 import numpy as np
 import time
 import plotly.graph_objects as go
-from GridProcessing import Grid
-from ShapesFunctions import *
-from CustomGraphFunctions import *
+from gridProcessing import Grid
+from shape_functions import *
+from custom_graph_functions import *
 from InvertPendulum import *
 from argparse import ArgumentParser
 

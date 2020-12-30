@@ -1,12 +1,7 @@
 import numpy as np
-from Grid.GridProcessing import Grid
-from Shapes.ShapesFunctions import *
-
-# Specify the  file that includes dynamic systems
-from dynamics.Humannoid6D_sys1 import *
-from dynamics.DubinsCar4D import *
-import scipy.io as sio
-
+from grid.grid_processing import Grid
+from shapes.shape_functions import *
+from dynamics.dubin_car_4d import DubinsCar4D
 import math
 
 """ USER INTERFACES
@@ -19,11 +14,16 @@ import math
 - Run
 """
 
-# Grid field in this order: min_range, max_range, number of dims, grid dimensions, list of periodic dim: starting at 0
-"""g = grid(np.array([-0.5, -1.0, 0.5, -2.0, -math.pi/2, -8.0]), np.array([0.5, 1.0, 1.5, 2.0, math.pi/2, 8.0]), 6, np.array([27, 26, 27, 26, 27, 26]))
+g = Grid(
+    np.array([-3.0, -1.0, 0.0, -math.pi]),
+    np.array([3.0, 4.0, 1.0, math.pi]),
+    4,
+    np.array([60, 60, 30, 36]),
+    [3],
+)
 
 # Define my object
-my_car = Humanoid_6D()
+my_car = DubinsCar4D()
 
 # Use the grid to initialize initial value function
 Initial_value_f = Rectangle6D(g)

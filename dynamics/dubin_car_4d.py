@@ -1,5 +1,5 @@
 import heterocl as hcl
-import computeGraphs
+import compute_graphs
 
 """ 4D DUBINS CAR DYNAMICS IMPLEMENTATION 
  x_dot = v * cos(theta)
@@ -98,7 +98,7 @@ class DubinsCar4D:
                 d2[0] = self.dMax[1]
             with hcl.elif_(spat_deriv[1] < 0):
                 d2[0] = self.dMin[1]
-        else:
+        with hcl.else_():
             with hcl.if_(spat_deriv[0] > 0):
                 d1[0] = self.dMin[0]
             with hcl.elif_(spat_deriv[0] < 0):
